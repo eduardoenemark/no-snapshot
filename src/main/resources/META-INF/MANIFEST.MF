@@ -1,12 +1,5 @@
 Manifest-Version: 1.0
 Archiver-Version: Plexus Archiver
-Built-By: NUREA
+Built-By: EDUCODE
 Created-By: Apache Maven 3.3.3
 Build-Jdk: 1.8.0_60
-Bundle-SymbolicName: br.com.brb.hsm
-Bundle-Name: Hardware Security Module Plugin
-Bundle-Version: 1.0.0
-Bundle-ManifestVersion: 2
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-Vendor: BRB
-Bundle-Classpath: .

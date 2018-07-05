@@ -11,13 +11,13 @@
             </goals>
             <configuration>
                 <dependencies>
-                    <dependency-name>abc</dependency-name>
-                    <dependency-name>xpto</dependency-name>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                    <artifactId>springfox-core</artifactId>
                 </dependencies>
                 <plugins>
-                    <plugin-name>xyz</plugin-name>
+                    <artifactId>maven-surefire-plugin</artifactId>
                 </plugins>
-                <input>pom.xml</input>
+                <pomFile>pom.xml</pomFile>
                 <output>pom-output.xml</output>
             </configuration>
         </execution>
