@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <groupId>br.com.educode</groupId>
+    <artifactId>no-snapshot</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <executions>
+        <execution>
+            <id>no-snapshot</id>
+            <goals>
+                <goal>remove</goal>
+            </goals>
+            <configuration>
+                <dependencies>
+                    <dependency-name>abc</dependency-name>
+                    <dependency-name>xpto</dependency-name>
+                </dependencies>
+                <plugins>
+                    <plugin-name>xyz</plugin-name>
+                </plugins>
+                <input>pom.xml</input>
+                <output>pom-output.xml</output>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
