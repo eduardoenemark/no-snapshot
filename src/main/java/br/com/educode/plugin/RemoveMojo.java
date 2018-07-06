@@ -23,36 +23,77 @@ public class RemoveMojo extends AbstractMojo {
         if (StringUtils.isEmpty(this.pomFile)) {
             this.pomFile = "pom.xml";
         }
+        if (StringUtils.isEmpty(this.suffix)) {
+            this.suffix = "-SNAPSHOT";
+        }
+//        if (StringUtils.isEmpty(this.profiles)) {
+//            this._profiles = ;
+//        }
     }
 
     @Override
     public void execute() throws MojoExecutionException {
-//        System.out.println("Remove Goal!");
-//        System.out.println("file: " + pomFile);
-//        Iterator iterator = super.getPluginContext().keySet().iterator();
-//        while (iterator.hasNext()) {
-//            String key = (String) iterator.next();
-//            System.out.println("key: " + key);
-//        }
-//        System.out.println("project: " + super.getPluginContext().get("project"));
-
+        // tags: parent, dependency and plugin -> artifactId
         this.init();
         try {
-            Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(this.pomFile);
-            NodeList nodeList = (NodeList) document.getElementsByTagName("");
-
+            Document document = this.getDocument(this.pomFile);
+            String[] artifactIds = this.getNoSnapshotArtifactIds(document);
+            
+//            NodeList parentNodeList = document.getElementsByTagName(this.PARENT);
+//            for (int i = 0, size = parentNodeList.getLength(); i < size; i++){
+//                Node parent = parentNodeList.item(i);
+//                NodeList childrens = parent.getChildNodes();
+//                for (int j = 0, sizeChildrens = childrens.getLength(); j < sizeChildrens; j++) {
+//                    Node children = childrens.item(j);
+//                    if (children.getNodeName().equals(ARTIFACT_ID)) {
+//                        if (Arrays.binarySearch(artifactIds, children.getTextContent()) >= 0){
+//                            
+//                        }
+//                    }
+//                }
+//            }
+            
         } catch (ParserConfigurationException parserConfigurationException) {
-            parserConfigurationException.printStackTrace();
+            throw new MojoExecutionException(parserConfigurationException.getMessage(), parserConfigurationException);
         } catch (SAXException saxException) {
-            saxException.printStackTrace();
+            throw new MojoExecutionException(saxException.getMessage(), saxException);
         } catch (IOException ioException) {
-            ioException.printStackTrace();
+            throw new MojoExecutionException(ioException.getMessage(), ioException);
         }
+    }
+
+    
+    
+    private Document getDocument(String pomFile) throws ParserConfigurationException, SAXException, IOException {
+        return DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(this.pomFile);
+    }
+
+    private String[] getNoSnapshotArtifactIds(Document pomDocument) {
+        NodeList nodeList = (NodeList) pomDocument.getElementsByTagName(this.NO_SNAPSHOT_ARTIFACT_ID);
+        int size = nodeList.getLength();
+        String[] artifactIds = new String[size];
+        for (int i = 0; i < size; i++) {
+            artifactIds[i] = nodeList.item(i).getTextContent();
+        }
+        return artifactIds;
     }
 
     @Parameter(property = "pomFile")
     private String pomFile;
 
+    @Parameter(property = "suffix")
+    private String suffix;
+
+    private final String NO_SNAPSHOT_ARTIFACT_ID = "no-snapshot.artifactId";
+    private final String ARTIFACT_ID = "artifactId";
+    private final String VERSION = "version";
+    private final String PARENT = "parent";
+    private final String DEPENDENCY = "dependency";
+    private final String PLUGIN = "plugin";
+
+//    @Parameter(property = "profiles")
+//    private String profiles;
+//    private String[] _profiles;
     /*
        // Cria o documento virtual XML para o processamento dos nós do arquivo
         Unmarshaller unmarshaller = JAXBContext.newInstance(TarifacaoMensal.class).createUnmarshaller();
