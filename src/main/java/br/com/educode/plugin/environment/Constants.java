@@ -18,5 +18,8 @@ public interface Constants {
     public static final String PLUGIN_TAGNAME = "plugin";
     public static final String EMPTY = "";
     public static final String VERSION_SUFFIX = "-SNAPSHOT";
-    
+    public static final String DEFAULT_POM_NAME = "pom.xml";
+    public static final String DEFAULT_POM_NO_SNAPSHOT_NAME = "pom-no-snapshot.xml";
+    public static final String DEFAULT_ENCODE = "UTF-8";
+    public static final Boolean DEFAULT_PRINT_CONSOLE = false;
 }

@@ -1,0 +1,1 @@
+mvn br.com.educode:no-snapshot:1.0-beta:put-again -DprintConsole=true -DpomFile=pom-no-snapshot.xml 

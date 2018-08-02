@@ -2,10 +2,11 @@ package br.com.educode.plugin.util;
 
 import static br.com.educode.plugin.environment.Constants.NO_SNAPSHOT_ARTIFACT_ID_TAGNAME;
 import java.io.IOException;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.util.Arrays;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import org.w3c.dom.DOMConfiguration;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -59,14 +60,13 @@ public class Utils {
 
         DOMImplementationRegistry registry = DOMImplementationRegistry.newInstance();
         DOMImplementationLS domImplLS = (DOMImplementationLS) registry.getDOMImplementation("LS");
-
         LSSerializer lsSerializer = domImplLS.createLSSerializer();
-        DOMConfiguration domConfig = lsSerializer.getDomConfig();
-        domConfig.setParameter("format-pretty-print", true);
-
         LSOutput lsOutput = domImplLS.createLSOutput();
-        lsOutput.setEncoding(encode);
 
-        return lsSerializer.writeToString(document);
+        lsOutput.setEncoding(encode);
+        lsOutput.setCharacterStream(new StringWriter());
+        lsSerializer.write(document, lsOutput);
+
+        return lsOutput.getCharacterStream().toString();
     }
 }

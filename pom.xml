@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.educode</groupId>
     <artifactId>no-snapshot</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-beta</version>
     <name>No Snapshot</name>
     <description></description>
     <packaging>maven-plugin</packaging>

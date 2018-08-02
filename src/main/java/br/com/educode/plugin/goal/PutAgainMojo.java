@@ -2,7 +2,6 @@ package br.com.educode.plugin.goal;
 
 import static br.com.educode.plugin.environment.Constants.ARTIFACT_ID_TAGNAME;
 import static br.com.educode.plugin.environment.Constants.DEPENDENCY_TAGNAME;
-import static br.com.educode.plugin.environment.Constants.EMPTY;
 import static br.com.educode.plugin.environment.Constants.PARENT_TAGNAME;
 import static br.com.educode.plugin.environment.Constants.PLUGIN_TAGNAME;
 import static br.com.educode.plugin.environment.Constants.PROJECT_TAGNAME;
@@ -19,7 +18,6 @@ import java.util.Arrays;
 import java.util.List;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
-import org.codehaus.plexus.util.StringUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -28,10 +26,10 @@ import org.w3c.dom.NodeList;
  * @since 1.0-beta
  * @author eduardo@educode.com.br
  */
-@Mojo(name = "remove")
-public class RemoveMojo extends EducodeMojo {
+@Mojo(name = "put-again")
+public class PutAgainMojo extends EducodeMojo {
 
-    public RemoveMojo() {
+    public PutAgainMojo() {
         super();
     }
 
@@ -57,17 +55,12 @@ public class RemoveMojo extends EducodeMojo {
 
                         if (Arrays.binarySearch(artifactIdsTextContent, artifactIdNodeOfDependencyNode.getTextContent()) >= 0) {
                             versionNodeOfDependencyNode.setTextContent(
-                                    StringUtils.replaceOnce(
-                                            versionNodeOfDependencyNode.getTextContent(),
-                                            this.getSuffix(),
-                                            EMPTY
-                                    )
+                                    versionNodeOfDependencyNode.getTextContent().concat(this.getSuffix())
                             );
                         }
                     }
                 }
             }
-
             if (this.getPrintConsole()) {
                 System.out.println(getTextContentOfDocument(document, this.getEncode()));
             } else {
