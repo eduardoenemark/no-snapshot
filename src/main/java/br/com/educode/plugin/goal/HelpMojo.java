@@ -10,7 +10,7 @@ import org.apache.maven.plugins.annotations.Mojo;
 
 /**
  * @since 1.0-beta
- * @author eduardo@educode.com.br
+ * <a href="mailto:eduardo@educode.com.br">Eduardo Vieira</a>
  */
 @Mojo(name = "help")
 public class HelpMojo extends EducodeMojo {

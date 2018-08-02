@@ -10,14 +10,26 @@
         <name>Educode</name>
         <url>http://www.educode.com.br</url>
     </organization>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
     <developers>
         <developer>
             <name>Eduardo Vieira Barbosa</name>
             <email>eduardo@educode.com.br</email>
-            <organization>External</organization>
+            <organization>Educode</organization>
             <organizationUrl>http://www.educode.com.br</organizationUrl>
         </developer>
     </developers>
+    <scm>
+        <connection>scm:git:git://github.com/eduardoenemark/no-snapshot.git</connection>
+        <developerConnection>scm:git:ssh://github.com:eduardoenemark/no-snapshot.git</developerConnection>
+        <url>https://github.com/eduardoenemark/no-snapshot/tree/master</url>
+    </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>

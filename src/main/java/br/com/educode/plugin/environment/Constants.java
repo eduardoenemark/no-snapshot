@@ -1,8 +1,8 @@
 package br.com.educode.plugin.environment;
 
 /**
- *
- * @author eduardo@educode.com.br
+ * @since 1.0-beta
+ * <a href="mailto:eduardo@educode.com.br">Eduardo Vieira</a>
  */
 public interface Constants {
 

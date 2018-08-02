@@ -3,7 +3,6 @@ package br.com.educode.plugin.util;
 import static br.com.educode.plugin.environment.Constants.NO_SNAPSHOT_ARTIFACT_ID_TAGNAME;
 import java.io.IOException;
 import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Arrays;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -17,8 +16,8 @@ import org.w3c.dom.ls.LSSerializer;
 import org.xml.sax.SAXException;
 
 /**
- *
- * @author eduardo@educode.com.br
+ * @since 1.0-beta
+ * <a href="mailto:eduardo@educode.com.br">Eduardo Vieira</a>
  */
 public class Utils {
 
