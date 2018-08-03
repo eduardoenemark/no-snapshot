@@ -4,7 +4,7 @@
     <artifactId>no-snapshot</artifactId>
     <version>1.0-beta</version>
     <name>No Snapshot</name>
-    <description></description>
+    <description>No Snapshot is a plugin for Maven to manipulate SNAPSHOT suffix of dependency version</description>
     <packaging>maven-plugin</packaging>
     <organization>
         <name>Educode</name>
@@ -72,18 +72,4 @@
             </plugin>
         </plugins>
     </build>
-    <distributionManagement>
-        <repository>
-            <id>nexus</id>
-            <url>https://</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus</id>
-            <url>https://</url>
-        </snapshotRepository>
-    </distributionManagement>
-    <scm>
-        <connection>scm:svn:</connection>
-        <developerConnection>scm:svn:</developerConnection>
-    </scm>
 </project>

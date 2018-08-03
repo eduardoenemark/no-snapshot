@@ -28,15 +28,25 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 /**
+ * EducodeMojo Abstract class is super class to the daughter class that
+ * implements specific actions.
+ *
  * @since 1.0-beta
- * <a href="mailto:eduardo@educode.com.br">Eduardo Vieira</a>
+ * @author <a href="mailto:eduardo@educode.com.br">Eduardo Vieira</a>
  */
 public abstract class EducodeMojo extends AbstractMojo {
 
-    public EducodeMojo() {
+    /**
+     *
+     * @see See init method.
+     */
+    protected EducodeMojo() {
         this.init();
     }
 
+    /**
+     * It is for initialization of default values to EducodeMojo fields.
+     */
     public void init() {
         this.setPomFile(DEFAULT_POM_NAME);
         this.setOutputPomFile(DEFAULT_POM_NO_SNAPSHOT_NAME);
@@ -45,7 +55,15 @@ public abstract class EducodeMojo extends AbstractMojo {
         this.setPrintConsole(DEFAULT_PRINT_CONSOLE);
     }
 
-    
+    /**
+     * Select in project tag, parent tag, dependency tag and plugin tag that
+     * have in yours artifactId value equals to no-snapshot.artifactId values.
+     *
+     * @see org.w3c.dom.Node
+     * @param document represents XML file.
+     * @return List of Node that contains all selected nodes.
+     * @throws MojoExecutionException
+     */
     public List<Node> getSelectedDependencyNode(Document document) throws MojoExecutionException {
         try {
 
@@ -76,7 +94,14 @@ public abstract class EducodeMojo extends AbstractMojo {
             throw new MojoExecutionException(exception.getMessage(), exception);
         }
     }
-    
+
+    /**
+     * @see org.w3c.dom.Document
+     * @return Document represents XML File (POM).
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     */
     public Document getDocument()
             throws ParserConfigurationException, SAXException, IOException {
         if (this.document == null) {
@@ -85,62 +110,121 @@ public abstract class EducodeMojo extends AbstractMojo {
         return this.document;
     }
 
+    /**
+     *
+     * @return String that is address pom file.
+     */
     public String getPomFile() {
         return pomFile;
     }
 
+    /**
+     *
+     * @param pomFile is the address to access pom file.
+     */
     public void setPomFile(String pomFile) {
         this.pomFile = pomFile;
     }
 
+    /**
+     *
+     * @return String is output name to generated pom file.
+     */
     public String getOutputPomFile() {
         return outputPomFile;
     }
 
+    /**
+     *
+     * @param outputPomFile that is output name to future generated pom file.
+     */
     public void setOutputPomFile(String outputPomFile) {
         this.outputPomFile = outputPomFile;
     }
 
+    /**
+     *
+     * @return String that is represents suffix to concatenate with version
+     * value of the dependency.
+     */
     public String getSuffix() {
         return suffix;
     }
 
+    /**
+     *
+     * @param suffix is a String to be used in work with value version tag of
+     * dependency.
+     */
     public void setSuffix(String suffix) {
         this.suffix = suffix;
     }
 
+    /**
+     *
+     * @return String that is represents charset encode of pom file.
+     */
     public String getEncode() {
         return encode;
     }
 
+    /**
+     *
+     * @param encode is a String that represents charset encode of pom file.
+     */
     public void setEncode(String encode) {
         this.encode = encode;
     }
 
+    /**
+     *
+     * @return Boolean is to decide whether of content file is print in screen
+     * or not.
+     */
     public Boolean getPrintConsole() {
         return printConsole;
     }
 
+    /**
+     *
+     * @param printConsole is Boolean value for print or not in screen.
+     */
     public void setPrintConsole(Boolean printConsole) {
         this.printConsole = printConsole;
     }
 
+    /**
+     *
+     */
     @Parameter(property = "pomFile")
     private String pomFile;
 
+    /**
+     *
+     */
     @Parameter(property = "outputPomFile")
     private String outputPomFile;
 
+    /**
+     *
+     */
     @Parameter(property = "suffix")
     private String suffix;
 
+    /**
+     *
+     */
     @Parameter(property = "encode")
     private String encode;
 
+    /**
+     *
+     */
     @Parameter(property = "printConsole")
     private Boolean printConsole;
 
+    /**
+     *
+     */
     private Document document;
-//    @Parameter(property = "profiles")
-//    private String profiles;
 }

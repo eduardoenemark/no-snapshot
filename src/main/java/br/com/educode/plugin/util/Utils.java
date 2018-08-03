@@ -16,20 +16,49 @@ import org.w3c.dom.ls.LSSerializer;
 import org.xml.sax.SAXException;
 
 /**
+ * Utils class for commons utilities to used by classes that contains actions
+ * (execute method).
+ *
  * @since 1.0-beta
- * <a href="mailto:eduardo@educode.com.br">Eduardo Vieira</a>
+ * @author <a href="mailto:eduardo@educode.com.br">Eduardo Vieira</a>
  */
 public class Utils {
 
+    /**
+     * @see org.w3c.dom.Document
+     * @param xmlFile represents localization or name file of the XML file (e.g.
+     * pom.xml)
+     * @return Document object for manipulation.
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     */
     public static Document getDocument(String xmlFile)
             throws ParserConfigurationException, SAXException, IOException {
         return DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(xmlFile);
     }
 
+    /**
+     *
+     * @see org.w3c.dom.Document
+     * @see org.w3c.dom.Node
+     * @see org.w3c.dom.NodeList
+     * @param document that is Document object.
+     * @param tagName that is name of tag to be recuperated.
+     * @return
+     */
     public static NodeList getNodeList(Document document, String tagName) {
         return (NodeList) document.getElementsByTagName(tagName);
     }
 
+    /**
+     *
+     * @see org.w3c.dom.Node
+     * @see org.w3c.dom.NodeList
+     * @param nodeList is set of Node.
+     * @param tagName is the tag name to be recuperated of nodeList.
+     * @return Node is first occurrence of agreed with tagName into of nodeList.
+     */
     public static Node getNodeByTagName(NodeList nodeList, String tagName) {
         Node wanted = null;
         for (int i = 0, size = nodeList.getLength(); i < size; i++) {
@@ -43,6 +72,13 @@ public class Utils {
         return wanted;
     }
 
+    /**
+     *
+     * @see org.w3c.dom.Document
+     * @param document is Document object.
+     * @return String[] is array with all values of no-snapshot.artifactId
+     * presents into of the pom file.
+     */
     public static String[] getNoSnapshotArtifactIdsTextContent(Document document) {
         NodeList noSnapshotArtifactIdNodeList = getNodeList(document, NO_SNAPSHOT_ARTIFACT_ID_TAGNAME);
         int size = noSnapshotArtifactIdNodeList.getLength();
@@ -54,6 +90,16 @@ public class Utils {
         return artifactIds;
     }
 
+    /**
+     *
+     * @see org.w3c.dom.Document
+     * @param document is Document object that represents XML file.
+     * @param encode is charset encode for document. 
+     * @return String that is content of document.
+     * @throws ClassNotFoundException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     */
     public static String getTextContentOfDocument(Document document, String encode)
             throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 

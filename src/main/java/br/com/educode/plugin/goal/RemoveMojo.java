@@ -12,16 +12,27 @@ import org.codehaus.plexus.util.StringUtils;
 import org.w3c.dom.Node;
 
 /**
+ * RemoveMojo Class realize operation of remove suffix (-SNAPSHOT) of version
+ * tag into nodes of the informed pom file.
+ *
  * @since 1.0-beta
- * <a href="mailto:eduardo@educode.com.br">Eduardo Vieira</a>
+ * @author <a href="mailto:eduardo@educode.com.br">Eduardo Vieira</a>
  */
 @Mojo(name = "remove")
 public class RemoveMojo extends EducodeMojo {
 
+    /**
+     * @see EducodeMojo Constructor.
+     */
     public RemoveMojo() {
         super();
     }
 
+    /**
+     * Execute action of remove suffix.
+     *
+     * @throws MojoExecutionException
+     */
     @Override
     public void execute() throws MojoExecutionException {
         try {

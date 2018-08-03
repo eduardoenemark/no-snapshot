@@ -10,16 +10,27 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.w3c.dom.Node;
 
 /**
+ * PutAgainMojo Class realize operation of put again suffix (-SNAPSHOT) of
+ * version tag into nodes of the informed pom file.
+ *
  * @since 1.0-beta
- * <a href="mailto:eduardo@educode.com.br">Eduardo Vieira</a>
+ * @author <a href="mailto:eduardo@educode.com.br">Eduardo Vieira</a>
  */
 @Mojo(name = "put-again")
 public class PutAgainMojo extends EducodeMojo {
 
+    /**
+     * @see EducodeMojo Constructor.
+     */
     public PutAgainMojo() {
         super();
     }
 
+    /**
+     * Execute action of put again suffix.
+     *
+     * @throws MojoExecutionException
+     */
     @Override
     public void execute() throws MojoExecutionException {
         try {
