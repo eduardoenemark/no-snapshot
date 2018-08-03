@@ -61,10 +61,10 @@ There are several projects in progressing. In the perfect world this not admissi
 
 
 
-#### remove goal
+> #### remove goal
 
 Let's go to examples! Remove all suffix (SNAPSHOT):
-```sh
+```bash
 mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml
 ```
 
@@ -125,25 +125,25 @@ The output above will a new file of name **no-snapshot-pom.xml** into current di
 
 
 Wow! Let's continue the examples. Whether you wish change filename of no-snapshot-pom.xml to any other use outputPomFile property:
-```sh
+```bash
 mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml -DoutputPomFile=pom-test.xml
 ```
 
 
 You can overwrite own pom.xml file:
-```sh
+```bash
 mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml -DoutputPomFile=pom.xml
 ```
 
 
 Only display at screen by printConsole property, when use such property not generate none file. The pomFile property default value is pom.xml file:
-```sh
+```bash
 mvn br.com.educode:no-snapshot:1.0-beta:remove -DprintConsole=true
 ```
 
 
 The default encode considered is *UTF-8*, but you change to other, then use encode property:
-```sh
+```bash
 mvn br.com.educode:no-snapshot:1.0-beta:remove -Dencode=ISO-8859-1
 ```
 
@@ -156,13 +156,13 @@ no-snapshot-pom.xml file first line:
 
 
 You can change suffix value. This example change -NO-SNAPSHOT to -beta, only occurrence of -beta will change: 
-```sh
+```bash
 mvn br.com.educode:no-snapshot:1.0-beta:remove -Dsuffix=-beta
 ```
 
 
 
-### put-again goal
+> ### put-again goal
 
 Now let's go view the opposite process. I let suppose what only project00, project02, and project04 continue in development, then other stables projects not need be referenced:
 ```xml
@@ -178,19 +178,19 @@ Now let's go view the opposite process. I let suppose what only project00, proje
 
 
 Let's put again suffix into pom file:
-```sh
+```bash
 mvn br.com.educode:no-snapshot:1.0-beta:put-again -DpomFile=no-snapshot-pom.xml -DoutputPomFile=put-again-pom.xml
 ```
 
 
 Using different suffix:
-```sh
+```bash
 mvn br.com.educode:no-snapshot:1.0-beta:put-again -Dsuffix=-beta -DpomFile=no-snapshot-pom.xml -DoutputPomFile=beta-suffix-pom.xml
 ```
 
 
 You can also print console without need generate a new file:
-```sh
+```bash
 mvn br.com.educode:no-snapshot:1.0-beta:put-again -DpomFile=no-snapshot-pom.xml -DprintConsole=true
 ```
 

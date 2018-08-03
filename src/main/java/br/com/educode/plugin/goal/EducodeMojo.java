@@ -1,9 +1,9 @@
 package br.com.educode.plugin.goal;
 
+import br.com.educode.plugin.environment.Constants;
 import static br.com.educode.plugin.environment.Constants.ARTIFACT_ID_TAGNAME;
 import static br.com.educode.plugin.environment.Constants.DEFAULT_ENCODE;
 import static br.com.educode.plugin.environment.Constants.DEFAULT_POM_NAME;
-import static br.com.educode.plugin.environment.Constants.DEFAULT_POM_NO_SNAPSHOT_NAME;
 import static br.com.educode.plugin.environment.Constants.DEFAULT_PRINT_CONSOLE;
 import static br.com.educode.plugin.environment.Constants.DEPENDENCY_TAGNAME;
 import static br.com.educode.plugin.environment.Constants.PARENT_TAGNAME;
@@ -40,7 +40,7 @@ public abstract class EducodeMojo extends AbstractMojo {
      *
      * @see init method.
      */
-    protected EducodeMojo() {
+    public EducodeMojo() {
         this.init();
     }
 
@@ -49,7 +49,7 @@ public abstract class EducodeMojo extends AbstractMojo {
      */
     public void init() {
         this.setPomFile(DEFAULT_POM_NAME);
-        this.setOutputPomFile(DEFAULT_POM_NO_SNAPSHOT_NAME);
+        this.setOutputPomFile(Constants.DEFAULT_NO_SNAPSHOT_NAME_POM);
         this.setSuffix(VERSION_SUFFIX);
         this.setEncode(DEFAULT_ENCODE);
         this.setPrintConsole(DEFAULT_PRINT_CONSOLE);

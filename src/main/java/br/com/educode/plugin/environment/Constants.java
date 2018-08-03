@@ -76,7 +76,7 @@ public interface Constants {
     /**
      * {@value}
      */
-    public static final String DEFAULT_POM_NO_SNAPSHOT_NAME = "pom-no-snapshot.xml";
+    public static final String DEFAULT_NO_SNAPSHOT_NAME_POM = "no-snapshot-pom.xml";
 
     /**
      * {@value}
