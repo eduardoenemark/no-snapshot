@@ -31,7 +31,7 @@ public class RemoveMojo extends EducodeMojo {
     /**
      * Execute action of remove suffix.
      *
-     * @throws MojoExecutionException
+     * @throws MojoExecutionException Exception to any failure of execution.
      */
     @Override
     public void execute() throws MojoExecutionException {

@@ -29,7 +29,7 @@ public class PutAgainMojo extends EducodeMojo {
     /**
      * Execute action of put again suffix.
      *
-     * @throws MojoExecutionException
+     * @throws MojoExecutionException Exception to any failure of execution.
      */
     @Override
     public void execute() throws MojoExecutionException {

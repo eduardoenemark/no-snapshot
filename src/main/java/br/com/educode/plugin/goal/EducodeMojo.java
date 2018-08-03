@@ -38,7 +38,7 @@ public abstract class EducodeMojo extends AbstractMojo {
 
     /**
      *
-     * @see See init method.
+     * @see init method.
      */
     protected EducodeMojo() {
         this.init();
@@ -62,7 +62,7 @@ public abstract class EducodeMojo extends AbstractMojo {
      * @see org.w3c.dom.Node
      * @param document represents XML file.
      * @return List of Node that contains all selected nodes.
-     * @throws MojoExecutionException
+     * @throws MojoExecutionException Exception to any failure of execution.
      */
     public List<Node> getSelectedDependencyNode(Document document) throws MojoExecutionException {
         try {
@@ -98,9 +98,9 @@ public abstract class EducodeMojo extends AbstractMojo {
     /**
      * @see org.w3c.dom.Document
      * @return Document represents XML File (POM).
-     * @throws ParserConfigurationException
-     * @throws SAXException
-     * @throws IOException
+     * @throws ParserConfigurationException Consult documentation of the API.
+     * @throws SAXException Consult documentation of the API.
+     * @throws IOException Consult documentation of the API.
      */
     public Document getDocument()
             throws ParserConfigurationException, SAXException, IOException {

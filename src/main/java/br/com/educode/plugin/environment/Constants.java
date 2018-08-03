@@ -86,5 +86,5 @@ public interface Constants {
     /**
      * {@value}
      */
-    public static final Boolean DEFAULT_PRINT_CONSOLE = false;
+    public static final boolean DEFAULT_PRINT_CONSOLE = false;
 }

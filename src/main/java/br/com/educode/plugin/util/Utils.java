@@ -29,9 +29,9 @@ public class Utils {
      * @param xmlFile represents localization or name file of the XML file (e.g.
      * pom.xml)
      * @return Document object for manipulation.
-     * @throws ParserConfigurationException
-     * @throws SAXException
-     * @throws IOException
+     * @throws ParserConfigurationException Consult documentation of the API.
+     * @throws SAXException Consult documentation of the API.
+     * @throws IOException Consult documentation of the API.
      */
     public static Document getDocument(String xmlFile)
             throws ParserConfigurationException, SAXException, IOException {
@@ -45,7 +45,7 @@ public class Utils {
      * @see org.w3c.dom.NodeList
      * @param document that is Document object.
      * @param tagName that is name of tag to be recuperated.
-     * @return
+     * @return NodeList that is subset of document by tagname.
      */
     public static NodeList getNodeList(Document document, String tagName) {
         return (NodeList) document.getElementsByTagName(tagName);
@@ -96,9 +96,9 @@ public class Utils {
      * @param document is Document object that represents XML file.
      * @param encode is charset encode for document. 
      * @return String that is content of document.
-     * @throws ClassNotFoundException
-     * @throws InstantiationException
-     * @throws IllegalAccessException
+     * @throws ClassNotFoundException Consult documentation of the API.
+     * @throws InstantiationException Consult documentation of the API.
+     * @throws IllegalAccessException Consult documentation of the API.
      */
     public static String getTextContentOfDocument(Document document, String encode)
             throws ClassNotFoundException, InstantiationException, IllegalAccessException {
