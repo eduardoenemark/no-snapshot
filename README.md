@@ -61,13 +61,10 @@ There are several projects in progressing. In the perfect world this not admissi
 
 
 
-> #### remove goal
+## remove goal
 
 Let's go to examples! Remove all suffix (SNAPSHOT):
-```bash
-mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml
-```
-
+> mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml
 
 The output above will a new file of name **no-snapshot-pom.xml** into current directory. The outputPomFile property default value is *no-snapshot-pom.xml*. This no-snapshot-pom.xml's result:
 ```xml
@@ -123,30 +120,17 @@ The output above will a new file of name **no-snapshot-pom.xml** into current di
 </project>
 ```
 
-
 Wow! Let's continue the examples. Whether you wish change filename of no-snapshot-pom.xml to any other use outputPomFile property:
-```bash
-mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml -DoutputPomFile=pom-test.xml
-```
-
+> mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml -DoutputPomFile=pom-test.xml
 
 You can overwrite own pom.xml file:
-```bash
-mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml -DoutputPomFile=pom.xml
-```
-
+> mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml -DoutputPomFile=pom.xml
 
 Only display at screen by printConsole property, when use such property not generate none file. The pomFile property default value is pom.xml file:
-```bash
-mvn br.com.educode:no-snapshot:1.0-beta:remove -DprintConsole=true
-```
-
+> mvn br.com.educode:no-snapshot:1.0-beta:remove -DprintConsole=true
 
 The default encode considered is *UTF-8*, but you change to other, then use encode property:
-```bash
-mvn br.com.educode:no-snapshot:1.0-beta:remove -Dencode=ISO-8859-1
-```
-
+> mvn br.com.educode:no-snapshot:1.0-beta:remove -Dencode=ISO-8859-1
 
 no-snapshot-pom.xml file first line:
 ```xml
@@ -154,15 +138,12 @@ no-snapshot-pom.xml file first line:
 ....
 ```
 
-
 You can change suffix value. This example change -NO-SNAPSHOT to -beta, only occurrence of -beta will change: 
-```bash
-mvn br.com.educode:no-snapshot:1.0-beta:remove -Dsuffix=-beta
-```
+> mvn br.com.educode:no-snapshot:1.0-beta:remove -Dsuffix=-beta
 
 
 
-> ### put-again goal
+## put-again goal
 
 Now let's go view the opposite process. I let suppose what only project00, project02, and project04 continue in development, then other stables projects not need be referenced:
 ```xml
@@ -178,21 +159,13 @@ Now let's go view the opposite process. I let suppose what only project00, proje
 
 
 Let's put again suffix into pom file:
-```bash
-mvn br.com.educode:no-snapshot:1.0-beta:put-again -DpomFile=no-snapshot-pom.xml -DoutputPomFile=put-again-pom.xml
-```
-
+> mvn br.com.educode:no-snapshot:1.0-beta:put-again -DpomFile=no-snapshot-pom.xml -DoutputPomFile=put-again-pom.xml
 
 Using different suffix:
-```bash
-mvn br.com.educode:no-snapshot:1.0-beta:put-again -Dsuffix=-beta -DpomFile=no-snapshot-pom.xml -DoutputPomFile=beta-suffix-pom.xml
-```
-
+> mvn br.com.educode:no-snapshot:1.0-beta:put-again -Dsuffix=-beta -DpomFile=no-snapshot-pom.xml -DoutputPomFile=beta-suffix-pom.xml
 
 You can also print console without need generate a new file:
-```bash
-mvn br.com.educode:no-snapshot:1.0-beta:put-again -DpomFile=no-snapshot-pom.xml -DprintConsole=true
-```
+> mvn br.com.educode:no-snapshot:1.0-beta:put-again -DpomFile=no-snapshot-pom.xml -DprintConsole=true
 
 
 You not forget encode property. This is! You can talk me by **eduardo@educode.com.br**. Thank you.
