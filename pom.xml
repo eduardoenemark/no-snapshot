@@ -62,7 +62,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>${project.artifactId}-${project.version}</finalName>
+        <!--<finalName>${project.artifactId}-${project.version}</finalName>-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -107,7 +107,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>1.5</version>
@@ -120,8 +120,8 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin-->
-            <!--plugin>
+            </plugin>
+            <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
                 <version>1.6.7</version>
@@ -129,9 +129,9 @@
                 <configuration>
                     <serverId>ossrh</serverId>
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
                 </configuration>
-            </plugin-->
+            </plugin>
         </plugins>
     </build>
 </project>

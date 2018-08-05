@@ -66,6 +66,7 @@ There are several projects in progressing. In the perfect world this not admissi
 Let's go to examples! Remove all suffix (SNAPSHOT):
 > mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml
 
+
 The output above will a new file of name **no-snapshot-pom.xml** into current directory. The outputPomFile property default value is *no-snapshot-pom.xml*. This no-snapshot-pom.xml's result:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -123,20 +124,25 @@ The output above will a new file of name **no-snapshot-pom.xml** into current di
 Wow! Let's continue the examples. Whether you wish change filename of no-snapshot-pom.xml to any other use outputPomFile property:
 > mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml -DoutputPomFile=pom-test.xml
 
+
 You can overwrite own pom.xml file:
 > mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml -DoutputPomFile=pom.xml
+
 
 Only display at screen by printConsole property, when use such property not generate none file. The pomFile property default value is pom.xml file:
 > mvn br.com.educode:no-snapshot:1.0-beta:remove -DprintConsole=true
 
+
 The default encode considered is *UTF-8*, but you change to other, then use encode property:
 > mvn br.com.educode:no-snapshot:1.0-beta:remove -Dencode=ISO-8859-1
+
 
 no-snapshot-pom.xml file first line:
 ```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
 ....
 ```
+
 
 You can change suffix value. This example change -NO-SNAPSHOT to -beta, only occurrence of -beta will change: 
 > mvn br.com.educode:no-snapshot:1.0-beta:remove -Dsuffix=-beta
@@ -161,8 +167,10 @@ Now let's go view the opposite process. I let suppose what only project00, proje
 Let's put again suffix into pom file:
 > mvn br.com.educode:no-snapshot:1.0-beta:put-again -DpomFile=no-snapshot-pom.xml -DoutputPomFile=put-again-pom.xml
 
+
 Using different suffix:
 > mvn br.com.educode:no-snapshot:1.0-beta:put-again -Dsuffix=-beta -DpomFile=no-snapshot-pom.xml -DoutputPomFile=beta-suffix-pom.xml
+
 
 You can also print console without need generate a new file:
 > mvn br.com.educode:no-snapshot:1.0-beta:put-again -DpomFile=no-snapshot-pom.xml -DprintConsole=true
