@@ -179,5 +179,6 @@ You can also print console without needing to generate a new file:
 Don't forget the encode property. This is it! You can contact me by **eduardo@educode.com.br**. Thank you.
 
 --
+
 Text revision by Lucas Matias (github.com/lucasjmatias or lucasmatias.87@gmail.com).
 
