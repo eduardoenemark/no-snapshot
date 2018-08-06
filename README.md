@@ -176,7 +176,7 @@ You can also print console without needing to generate a new file:
 > mvn br.com.educode:no-snapshot:1.0-beta:put-again -DpomFile=no-snapshot-pom.xml -DprintConsole=true
 
 
-Don't forget the encode property. This is it! You can contact me by **eduardo@educode.com.br**. Thank you.
+Don't forget the encode property. This is it! You can contact me by eduardo@educode.com.br. Thank you.
 
 --
 
