@@ -63,7 +63,7 @@ There are several projects in snapshot stage in progress, which are interdepende
 ## remove goal
 
 Let's go through the examples! Remove all the suffixes (SNAPSHOT):
-> mvn br.com.educode:no-snapshot:1.0-beta:remove
+> mvn br.com.educode:no-snapshot:1.0:remove
 
 
 The output above will be a new file of name **no-snapshot-pom.xml** within the current directory. The outputPomFile property default value is *no-snapshot-pom.xml*. This no-snapshot-pom.xml's result:
@@ -122,19 +122,19 @@ The output above will be a new file of name **no-snapshot-pom.xml** within the c
 ```
 
 Wow! Let's continue  through the examples. Whether you wish to change the filename of no-snapshot-pom.xml to any other use outputPomFile property:
-> mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml -DoutputPomFile=pom-test.xml
+> mvn br.com.educode:no-snapshot:1.0:remove -DpomFile=pom.xml -DoutputPomFile=pom-test.xml
 
 
 You can overwrite the pom.xml file:
-> mvn br.com.educode:no-snapshot:1.0-beta:remove -DpomFile=pom.xml -DoutputPomFile=pom.xml
+> mvn br.com.educode:no-snapshot:1.0:remove -DpomFile=pom.xml -DoutputPomFile=pom.xml
 
 
 To only display the content on the screen use the printConsole property, when such property is used none file is generated. The default pomFile property value is pom.xml file:
-> mvn br.com.educode:no-snapshot:1.0-beta:remove -DprintConsole=true
+> mvn br.com.educode:no-snapshot:1.0:remove -DprintConsole=true
 
 
 The default encode considered is *UTF-8*, but you change to any other, then use the encode property:
-> mvn br.com.educode:no-snapshot:1.0-beta:remove -Dencode=ISO-8859-1
+> mvn br.com.educode:no-snapshot:1.0:remove -Dencode=ISO-8859-1
 
 
 no-snapshot-pom.xml file first line:
@@ -145,7 +145,7 @@ no-snapshot-pom.xml file first line:
 
 
 You can change the suffix value. This example change the suffix value from SNAPSHOT to beta: 
-> mvn br.com.educode:no-snapshot:1.0-beta:remove -Dsuffix=-beta
+> mvn br.com.educode:no-snapshot:1.0:remove -Dsuffix=-beta
 
 
 
@@ -165,15 +165,15 @@ Now let's go through the opposite process. Let's suppose which only project00, p
 
 
 Let's put the suffix again into the pom file:
-> mvn br.com.educode:no-snapshot:1.0-beta:put-again -DpomFile=no-snapshot-pom.xml -DoutputPomFile=put-again-pom.xml
+> mvn br.com.educode:no-snapshot:1.0:put-again -DpomFile=no-snapshot-pom.xml -DoutputPomFile=put-again-pom.xml
 
 
 Using different suffix:
-> mvn br.com.educode:no-snapshot:1.0-beta:put-again -Dsuffix=-beta -DpomFile=no-snapshot-pom.xml -DoutputPomFile=beta-suffix-pom.xml
+> mvn br.com.educode:no-snapshot:1.0:put-again -Dsuffix=-beta -DpomFile=no-snapshot-pom.xml -DoutputPomFile=beta-suffix-pom.xml
 
 
 You can also print console without needing to generate a new file:
-> mvn br.com.educode:no-snapshot:1.0-beta:put-again -DpomFile=no-snapshot-pom.xml -DprintConsole=true
+> mvn br.com.educode:no-snapshot:1.0:put-again -DpomFile=no-snapshot-pom.xml -DprintConsole=true
 
 
 Don't forget the encode property. This is it! You can contact me by eduardo@educode.com.br. Thank you.
