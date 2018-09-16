@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.educode</groupId>
     <artifactId>no-snapshot</artifactId>
-    <version>1.0-beta</version>
+    <version>1.0</version>
     <name>No Snapshot</name>
     <description>No Snapshot is a plugin for Maven to manipulate SNAPSHOT suffix of dependency version</description>
     <packaging>maven-plugin</packaging>
@@ -129,7 +129,7 @@
                 <configuration>
                     <serverId>ossrh</serverId>
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
         </plugins>
